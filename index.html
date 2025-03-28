@@ -1,16 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+
+        /* Encabezado */
+        h1 {
+            color: #0073e6;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        /* Lista de enlaces */
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            text-decoration: none;
+            background: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            background: #005bb5;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido a mi Portfolio</h1>
-    <p>Explora mis presentaciones:</p>
-    <ul>
-        <li><a href="presentacionPersonal.html">Ir a Presentación Personal</a></li>
-        <li><a href="presentacionProfesional.html">Ir a Presentación Profesional</a></li>
-    </ul>
+    <div class="container">
+        <h1>Bienvenido a mi Portfolio</h1>
+        <p>Explora mis presentaciones:</p>
+        <ul>
+            <li><a href="presentacionPersonal.html">Ir a Presentación Personal</a></li>
+            <li><a href="presentacionProfesional.html">Ir a Presentación Profesional</a></li>
+        </ul>
+    </div>
 </body>
 </html>

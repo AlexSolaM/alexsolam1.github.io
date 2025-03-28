@@ -5,62 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación Profesional</title>
     <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+        /* Reset y estilos base */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2d3748;
+            line-height: 1.6;
         }
 
         /* Contenedor principal */
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-top: 50px;
+        .professional-card {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .professional-card:hover {
+            transform: translateY(-5px);
         }
 
         /* Encabezado */
-        h2 {
-            color: rgb(89, 139, 210);
-            font-weight: bold;
-            font-size: 2em;
+        .letter-header {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1a73e8;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
         }
 
-        /* Texto del párrafo */
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-top: 20px;
+        .letter-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #1a73e8, #5e92f3);
+            border-radius: 2px;
         }
 
-        /* Sección de la carta de presentación */
-        .Carta de Presentació {
-            margin-bottom: 30px;
+        /* Contenido de la carta */
+        .letter-content {
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .letter-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .letter-content br {
+            content: "";
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        /* Resaltar elementos importantes */
+        .highlight {
+            color: #1a73e8;
+            font-weight: 500;
+        }
+
+        /* Firma */
+        .signature {
+            font-style: italic;
+            color: #718096;
+            margin-top: 1rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            .professional-card {
+                padding: 1.5rem;
+            }
+
+            .letter-header {
+                font-size: 1.8rem;
+            }
+
+            .letter-content {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="Carta de Presentació">
-            <h2>Carta a l'empresa</h2>
-            <p>
-                Benvolguts Ribas Alvarez, <br>
-                Em poso en contacte amb vostè per expressar el meu interès a unir-me a l'equip de treballar a la vostra empresa.
-                Sóc un jove professional apassionat per les noves tecnologies i tinc experiència com a practicant a Factotria 81, on vaig gestionar sistemes informàtics i tecnològics, vaig atendre a clients i vaig mantenir bases de dades i registres. <br>
-                Vaig acabar l’Educació Secundària Obligatòria a l’escola Fedac Sant Narcís. Després vaig cursar un Grau Mig de Sistemes Micronfirmàtics i Xarxes a l'IES Salvador Espriu. <br>
-                Posseeixo habilitats demostrades en programes com Excel, Word, Access, Gimp, Visual Studio, CSS i SQL. <br>
-                La meva capacitat per resoldre problemes complexos, juntament amb les meves habilitats comunicatives, em fan un candidat ideal per a qualsevol posició que requereixi eficiència i innovació dins de [nom de l'empresa]. Estic desitjós de tenir l'oportunitat de discutir com puc contribuir al vostre treball. <br>
-                Adjunt trobarà el meu currículum vitae per a la seva revisió. Estic disponible per a una entrevista en qualsevol moment i espero poder parlar amb vosaltres aviat. <br>
-                Atentament,
-            </p>
-        </div>
-    </div>
+    <article class="professional-card">
+        <section class="letter-section">
+            <h2 class="letter-header">Carta a l'empresa</h2>
+            <div class="letter-content">
+                <p>
+                    Benvolguts Ribas Alvarez,<br>
+                    Em poso en contacte amb vostè per expressar el meu interès a unir-me a l'equip de treballar a la vostra empresa. Sóc un <span class="highlight">jove professional apassionat per les noves tecnologies</span> i tinc experiència com a practicant a Factotria 81, on vaig gestionar sistemes informàtics i tecnològics, vaig atendre a clients i vaig mantenir bases de dades i registres.<br>
+                    Vaig acabar l’<span class="highlight">Educació Secundària Obligatòria</span> a l’escola Fedac Sant Narcís. Després vaig cursar un <span class="highlight">Grau Mig de Sistemes Microinformàtics i Xarxes</span> a l'IES Salvador Espriu.<br>
+                    Posseeixo habilitats demostrades en programes com <span class="highlight">Excel, Word, Access, Gimp, Visual Studio, CSS i SQL</span>.<br>
+                    La meva capacitat per resoldre problemes complexos, juntament amb les meves habilitats comunicatives, em fan un candidat ideal per a qualsevol posició que requereixi eficiència i innovació dins de [nom de l'empresa]. Estic desitjós de tenir l'oportunitat de discutir com puc contribuir al vostre treball.<br>
+                    Adjunt trobarà el meu currículum vitae per a la seva revisió. Estic disponible per a una entrevista en qualsevol moment i espero poder parlar amb vosaltres aviat.<br>
+                    <span class="signature">Atentament,</span>
+                </p>
+            </div>
+        </section>
+    </article>
 </body>
 </html>

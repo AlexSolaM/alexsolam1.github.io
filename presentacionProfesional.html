@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación Profesional</title>
+    <title>Àlex Sola - Profesional</title>
     <style>
-        /* Reset y estilos base */
         * {
             margin: 0;
             padding: 0;
@@ -13,116 +12,216 @@
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Poppins', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: #2d3748;
-            line-height: 1.6;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Fondo dinámico */
+        .professional-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            padding: 3rem 1rem;
+            overflow: hidden;
+        }
+
+        .bg-effects {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .bg-effects::before {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.25), transparent);
+            top: -5%;
+            left: 10%;
+            animation: glow 7s infinite;
+        }
+
+        .bg-effects::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(147, 197, 253, 0.2), transparent);
+            bottom: 10%;
+            right: 5%;
+            animation: glow 5s infinite reverse;
+        }
+
+        @keyframes glow {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.15); opacity: 0.4; }
         }
 
         /* Contenedor principal */
-        .professional-card {
-            max-width: 800px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+        .professional-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            margin: 2rem 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            position: relative;
+            z-index: 1;
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .professional-card:hover {
+        .professional-container:hover {
             transform: translateY(-5px);
         }
 
         /* Encabezado */
         .letter-header {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #1a73e8;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
             position: relative;
-            padding-bottom: 0.5rem;
         }
 
         .letter-header::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -10px;
             left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #1a73e8, #5e92f3);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa, transparent);
             border-radius: 2px;
         }
 
         /* Contenido de la carta */
         .letter-content {
             font-size: 1.1rem;
-            color: #4a5568;
+            color: #cbd5e1;
+            line-height: 1.8;
+            flex-grow: 1;
         }
 
         .letter-content p {
-            margin-bottom: 1.5rem;
-            text-align: justify;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
-        .letter-content br {
-            content: "";
-            display: block;
-            margin: 0.5rem 0;
+        .letter-content p::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            opacity: 0.5;
+            font-weight: bold;
         }
 
-        /* Resaltar elementos importantes */
         .highlight {
-            color: #1a73e8;
-            font-weight: 500;
+            color: #93c5fd;
+            font-weight: 600;
+            background: rgba(96, 165, 250, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
 
-        /* Firma */
+        .highlight:hover {
+            background: rgba(96, 165, 250, 0.3);
+        }
+
         .signature {
             font-style: italic;
-            color: #718096;
-            margin-top: 1rem;
+            color: #94a3b8;
+            margin-top: 1.5rem;
+            display: block;
+            text-align: right;
+            font-size: 1.2rem;
         }
 
-        /* Media Queries */
-        @media (max-width: 600px) {
-            .professional-card {
+        /* Botón de volver */
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #60a5fa, #93c5fd);
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+            align-self: center;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(45deg, #93c5fd, #60a5fa);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.6);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .professional-container {
                 padding: 1.5rem;
+                margin: 1rem;
             }
 
             .letter-header {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .letter-content {
                 font-size: 1rem;
             }
+
+            .back-button {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <article class="professional-card">
-        <section class="letter-section">
+    <div class="professional-wrapper">
+        <div class="bg-effects"></div>
+        <article class="professional-container">
             <h2 class="letter-header">Carta a l'empresa</h2>
             <div class="letter-content">
                 <p>
                     Benvolguts Ribas Alvarez,<br>
-                    Em poso en contacte amb vostè per expressar el meu interès a unir-me a l'equip de treballar a la vostra empresa. Sóc un <span class="highlight">jove professional apassionat per les noves tecnologies</span> i tinc experiència com a practicant a Factotria 81, on vaig gestionar sistemes informàtics i tecnològics, vaig atendre a clients i vaig mantenir bases de dades i registres.<br>
-                    Vaig acabar l’<span class="highlight">Educació Secundària Obligatòria</span> a l’escola Fedac Sant Narcís. Després vaig cursar un <span class="highlight">Grau Mig de Sistemes Microinformàtics i Xarxes</span> a l'IES Salvador Espriu.<br>
+                    Em poso en contacte amb vostè per expressar el meu interès a unir-me a l'equip de treballar a la vostra empresa. 
+                    Sóc un <span class="highlight">jove professional apassionat per les noves tecnologies</span> i tinc experiència com a practicant a Factotria 81, 
+                    on vaig gestionar sistemes informàtics i tecnològics, vaig atendre a clients i vaig mantenir bases de dades i registres.<br>
+                    Vaig acabar l’<span class="highlight">Educació Secundària Obligatòria</span> a l’escola Fedac Sant Narcís. 
+                    Després vaig cursar un <span class="highlight">Grau Mig de Sistemes Microinformàtics i Xarxes</span> a l'IES Salvador Espriu.<br>
                     Posseeixo habilitats demostrades en programes com <span class="highlight">Excel, Word, Access, Gimp, Visual Studio, CSS i SQL</span>.<br>
-                    La meva capacitat per resoldre problemes complexos, juntament amb les meves habilitats comunicatives, em fan un candidat ideal per a qualsevol posició que requereixi eficiència i innovació dins de [nom de l'empresa]. Estic desitjós de tenir l'oportunitat de discutir com puc contribuir al vostre treball.<br>
-                    Adjunt trobarà el meu currículum vitae per a la seva revisió. Estic disponible per a una entrevista en qualsevol moment i espero poder parlar amb vosaltres aviat.<br>
+                    La meva capacitat per resoldre problemes complexos, juntament amb les meves habilitats comunicatives, 
+                    em fan un candidat ideal per a qualsevol posició que requereixi eficiència i innovació dins de [nom de l'empresa]. 
+                    Estic desitjós de tenir l'oportunitat de discutir com puc contribuir al vostre treball.<br>
+                    Adjunt trobarà el meu currículum vitae per a la seva revisió. 
+                    Estic disponible per a una entrevista en qualsevol moment i espero poder parlar amb vosaltres aviat.<br>
                     <span class="signature">Atentament,</span>
                 </p>
             </div>
-        </section>
-    </article>
+            <a href="index.html" class="back-button">Volver al Inicio</a>
+        </article>
+    </div>
 </body>
 </html>

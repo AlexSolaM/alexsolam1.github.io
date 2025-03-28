@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Personal</title>
+    <title>Portfolio - Àlex Sola</title>
     <style>
-        /* Reset y estilos base */
         * {
             margin: 0;
             padding: 0;
@@ -13,123 +12,183 @@
         }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Poppins', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Fondo con partículas */
+        .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            line-height: 1.6;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1e3a8a 0%, #0f172a 100%);
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particles::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); opacity: 0.3; }
+            50% { transform: translateY(-20vh); opacity: 0.8; }
         }
 
         /* Contenedor principal */
-        .portfolio-card {
-            max-width: 600px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Tipografía */
-        .title {
-            font-size: 2.5rem;
-            color: #1a73e8;
+        .portfolio-container {
+            position: relative;
+            z-index: 1;
             text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        /* Título con efecto neon */
+        .neon-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 
+                0 0 5px #60a5fa,
+                0 0 10px #60a5fa,
+                0 0 20px #60a5fa,
+                0 0 40px #3b82f6;
+            animation: flicker 4s infinite alternate;
             margin-bottom: 1rem;
-            font-weight: 600;
-            background: linear-gradient(45deg, #1a73e8, #5e92f3);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
             font-weight: 300;
+            letter-spacing: 1px;
         }
 
-        /* Lista de enlaces */
-        .links-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        /* Navegación con cards */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
         }
 
-        .link-item {
-            transform: translateX(0);
-            transition: transform 0.2s ease;
+        .nav-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(96, 165, 250, 0.2);
         }
 
-        .link-item:hover {
-            transform: translateX(5px);
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%);
+            transition: all 0.4s ease;
+            opacity: 0;
         }
 
-        .portfolio-link {
-            display: block;
+        .nav-card:hover::before {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: #60a5fa;
+        }
+
+        .card-link {
             text-decoration: none;
-            background: linear-gradient(45deg, #1a73e8, #4285f4);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            color: #e2e8f0;
+            font-size: 1.5rem;
             font-weight: 500;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
-            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            display: block;
         }
 
-        .portfolio-link:hover {
-            background: linear-gradient(45deg, #1557b0, #3267d6);
-            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
-            transform: scale(1.03);
+        .card-link span {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            display: block;
+            margin-top: 0.5rem;
         }
 
-        /* Media Queries */
-        @media (max-width: 480px) {
-            .portfolio-card {
+        /* Responsividad */
+        @media (max-width: 600px) {
+            .neon-title {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .nav-card {
                 padding: 1.5rem;
             }
 
-            .title {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .portfolio-link {
-                font-size: 1rem;
-                padding: 0.7rem 1.2rem;
+            .card-link {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <main class="portfolio-card">
-        <h1 class="title">Bienvenido a mi Portfolio</h1>
-        <p class="subtitle">Explora mis presentaciones</p>
-        <ul class="links-list">
-            <li class="link-item">
-                <a href="presentacionPersonal.html" class="portfolio-link">Presentación Personal</a>
-            </li>
-            <li class="link-item">
-                <a href="presentacionProfesional.html" class="portfolio-link">Presentación Profesional</a>
-            </li>
-        </ul>
-    </main>
+    <section class="hero">
+        <div class="particles"></div>
+        <div class="portfolio-container">
+            <h1 class="neon-title">Àlex Sola</h1>
+            <p class="tagline">Desarrollador Web | Apasionado por la Tecnología</p>
+            <div class="nav-grid">
+                <div class="nav-card">
+                    <a href="presentacionPersonal.html" class="card-link">
+                        Personal
+                        <span>Conóceme mejor</span>
+                    </a>
+                </div>
+                <div class="nav-card">
+                    <a href="presentacionProfesional.html" class="card-link">
+                        Profesional
+                        <span>Mi experiencia y habilidades</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Fondo dinámico */
         .personal-wrapper {
             position: relative;
             width: 100%;
@@ -32,41 +31,6 @@
             overflow: hidden;
         }
 
-        .bg-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .bg-shapes::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.2), transparent);
-            top: 10%;
-            left: -10%;
-            animation: pulse 8s infinite;
-        }
-
-        .bg-shapes::after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(147, 197, 253, 0.15), transparent);
-            bottom: 20%;
-            right: -5%;
-            animation: pulse 6s infinite reverse;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 0.5; }
-        }
-
-        /* Contenedor principal */
         .personal-container {
             max-width: 900px;
             margin: 0 auto;
@@ -77,8 +41,7 @@
             z-index: 1;
         }
 
-        /* Sección Qui Sóc */
-        .about-section {
+        .about-section, .elevator-section {
             background: rgba(30, 41, 59, 0.9);
             border-radius: 20px;
             padding: 2rem;
@@ -87,7 +50,7 @@
             transition: transform 0.3s ease;
         }
 
-        .about-section:hover {
+        .about-section:hover, .elevator-section:hover {
             transform: scale(1.02);
         }
 
@@ -115,36 +78,25 @@
             border-radius: 5px;
         }
 
-        /* Sección Elevator Pitch */
-        .elevator-section {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.9));
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
         .elevator-content {
-            position: relative;
-            padding-left: 0; /* Ajustado para el video */
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
         }
 
-        .elevator-video {
-            width: 100%;
-            max-height: 300px;
+        .elevator-link {
+            display: inline-block;
+            background: #60a5fa;
+            color: #0f172a;
+            padding: 1rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        /* Botón de volver */
+        .elevator-link:hover {
+            background: #93c5fd;
+        }
+
         .back-button {
             display: inline-block;
             margin-top: 1.5rem;
@@ -166,7 +118,6 @@
             box-shadow: 0 8px 20px rgba(96, 165, 250, 0.6);
         }
 
-        /* Responsividad */
         @media (max-width: 768px) {
             .personal-container {
                 grid-template-columns: 1fr;
@@ -181,10 +132,6 @@
                 font-size: 1rem;
             }
 
-            .elevator-video {
-                max-height: 200px;
-            }
-
             .back-button {
                 font-size: 0.9rem;
                 padding: 0.7rem 1.2rem;
@@ -194,7 +141,6 @@
 </head>
 <body>
     <div class="personal-wrapper">
-        <div class="bg-shapes"></div>
         <div class="personal-container">
             <section class="about-section">
                 <h2 class="section-title">Qui sóc?</h2>
@@ -208,10 +154,7 @@
             <section class="elevator-section">
                 <h2 class="section-title">Elevator Pitch</h2>
                 <div class="elevator-content">
-                    <video class="elevator-video" controls>
-                        <source src="elevatorpitch.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
+                    <a href="https://drive.google.com/file/d/1jI7TiFKiXSRVJ2lKBkXtTl-K0T7-PbBn/view" class="elevator-link" target="_blank">Veure Elevator Pitch</a>
                 </div>
                 <a href="index.html" class="back-button">Volver al Inicio</a>
             </section>

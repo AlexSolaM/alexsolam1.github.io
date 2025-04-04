@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Àlex Sola - Sobre Mí</title>
+    <title>Portfolio d'Àlex Solà</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,70 +13,74 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            background: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 2rem;
         }
 
         .personal-wrapper {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            background: linear-gradient(45deg, #1e3a8a, #0f172a);
-            padding: 3rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
+        .header-section {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
         .personal-container {
-            max-width: 900px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            position: relative;
-            z-index: 1;
+            padding: 2rem;
         }
 
         .about-section, .elevator-section {
-            background: rgba(30, 41, 59, 0.9);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .about-section:hover, .elevator-section:hover {
-            transform: scale(1.02);
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .section-title {
-            font-size: 2.2rem;
+            color: #1e3a8a;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #60a5fa;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #60a5fa;
+            padding-bottom: 0.5rem;
         }
 
         .about-content {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            line-height: 1.8;
+            font-size: 1rem;
+            color: #555;
         }
 
         .about-content span {
-            color: #93c5fd;
+            color: #60a5fa;
             font-weight: 600;
-            background: rgba(96, 165, 250, 0.1);
             padding: 0.2rem 0.5rem;
-            border-radius: 5px;
+            border-radius: 4px;
+            background: rgba(96, 165, 250, 0.1);
         }
 
         .elevator-content {
@@ -84,71 +89,78 @@
 
         .elevator-link {
             display: inline-block;
+            padding: 0.8rem 2rem;
             background: #60a5fa;
-            color: #0f172a;
-            padding: 1rem;
-            border-radius: 10px;
-            text-decoration: none;
+            color: #fff;
             font-weight: 600;
-            transition: 0.3s;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
         }
 
         .elevator-link:hover {
-            background: #93c5fd;
+            background: #1e3a8a;
+        }
+
+        .buttons-container {
+            text-align: center;
+            padding: 0 2rem 2rem 2rem;
         }
 
         .back-button {
             display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, #60a5fa, #93c5fd);
-            color: #0f172a;
-            text-decoration: none;
+            padding: 0.8rem 2rem;
+            background: #60a5fa;
+            color: #fff;
             font-weight: 600;
-            font-size: 1rem;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
-            transition: all 0.3s ease;
-            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
         }
 
         .back-button:hover {
-            background: linear-gradient(45deg, #93c5fd, #60a5fa);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.6);
+            background: #1e3a8a;
         }
 
         @media (max-width: 768px) {
             .personal-container {
                 grid-template-columns: 1fr;
-                padding: 1rem;
+                padding: 1.5rem;
+            }
+
+            .header-section h1 {
+                font-size: 2rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             .about-content {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
-            .back-button {
+            .elevator-link, .back-button {
+                padding: 0.7rem 1.5rem;
                 font-size: 0.9rem;
-                padding: 0.7rem 1.2rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="personal-wrapper">
+        <header class="header-section">
+            <h1>Alex Sola</h1>
+            <p>Estudiant de Desenvolupament Web i Apassionat per la Tecnologia</p>
+        </header>
+
         <div class="personal-container">
             <section class="about-section">
                 <h2 class="section-title">Qui sóc?</h2>
                 <div class="about-content">
-                    Soc l'<span>Àlex Sola</span>, tinc 19 anys i estic estudiant <span>1r curs de DAW</span> a l'Institut Montilivi de Girona. 
-                    També vaig fer un <span>cicle formatiu de grau mitjà</span> a l'Institut Salvador Espriu de Salt. 
-                    Després d'acabar el curs, m'agradaria fer una especialització en <span>ciberseguretat</span> o entrar al món laboral. 
-                    A més, jugo a handbol a un equip de Girona.
+                    Sóc l'<span>Alex Sola</span>, un jove de 19 anys nascut a Girona. Actualment, estic cursant el <span>1r curs de Desenvolupament d’Aplicacions Web (DAW)</span> a l’Institut Montilivi. Prèviament, vaig completar un <span>Cicle Formatiu de Grau Mitjà en Sistemes Microinformàtics i Xarxes</span> a l’Institut Salvador Espriu de Salt. 
+                    <br><br>
+                    El meu objectiu és especialitzar-me en <span>ciberseguretat</span> o endinsar-me en el món laboral com a desenvolupador web. A més, sóc un apassionat de l’<span>handbol</span>, esport que practico en un equip local de Girona, i m’agrada combinar la meva rutina com a jugador amb activitats lúdicoesportives com a tècnic.
                 </div>
             </section>
             <section class="elevator-section">
@@ -156,8 +168,10 @@
                 <div class="elevator-content">
                     <a href="https://drive.google.com/file/d/1jI7TiFKiXSRVJ2lKBkXtTl-K0T7-PbBn/view" class="elevator-link" target="_blank">Veure Elevator Pitch</a>
                 </div>
-                <a href="index.html" class="back-button">Volver al Inicio</a>
             </section>
+        </div>
+        <div class="buttons-container">
+            <a href="index.html" class="back-button">Tornar a l’Inici</a>
         </div>
     </div>
 </body>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectes - Alex Sola</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .projects-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header-section {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .projects-container {
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: #1e3a8a;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #60a5fa;
+            padding-bottom: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2b4b9b;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #60a5fa;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+            transition: background 0.3s ease;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background: #1e3a8a;
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .projects-container {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+            }
+
+            .back-button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="projects-wrapper">
+        <header class="header-section">
+            <h1>Alex Sola</h1>
+            <p>Els meus projectes</p>
+        </header>
+        <section class="projects-container">
+            <h2 class="section-title">Projectes</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="projecte1.png" alt="Simulació Web Auditori de Girona">
+                    <h3 class="project-title"> Auditori de Girona</h3>
+                    <p class="project-description">
+                        Una simulació completa de la web de l’Auditori de Girona desenvolupada amb el model MVC  utilitzant HTML,PHP,CSS i una base de dades SQL. Aquest projecte permet gestionar esdeveniments culturals, com concerts o obres de teatre, amb funcionalitats com la creació, edició i eliminació d’esdeveniments, així com un sistema de reserves en línia. El disseny comptaba amb la opcio per cambiar de mode diurn a mode nocturn.
+                    </p>
+                </div>
+                <div class="project-card">
+                    <img src="projecte2.png" alt="Gestió de Restaurant en Vue">
+                    <h3 class="project-title">Taco Loco</h3>
+                    <p class="project-description">
+                        Una aplicació web desenvolupada amb Vue.js per a la gestió integral d’un restaurant. Aquest projecte inclou un sistema per administrar menús, plats i comandes, amb una interfície intuïtiva que permet als usuaris afegir o modificar plats, gestionar categories (entrants, principals, postres) i fer un seguiment de les comandes en temps real. Vam utilitzar CSS,JavaScript, PHP i router per a un disseny modern i funcional, amb l’objectiu d’optimitzar l’eficiència del negoci.
+                    </p>
+                </div>
+            </div>
+            <a href="index.html" class="back-button">Tornar a l’Inici</a>
+        </section>
+    </div>
+</body>
+</html>

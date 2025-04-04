@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Àlex Solà - Professional</title>
+    <title>Àlex Solà - Contacte</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -47,15 +47,15 @@
             font-weight: 300;
         }
 
-        .content-section {
+        .professional-container {
             padding: 2rem;
         }
 
-        h2 {
+        .letter-header {
             color: #1e3a8a;
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border-bottom: 2px solid #60a5fa;
             padding-bottom: 0.5rem;
         }
@@ -77,6 +77,7 @@
             padding-left: 1.5rem;
             margin-bottom: 0.8rem;
             font-size: 1rem;
+            color: #555;
         }
 
         ul li:before {
@@ -98,12 +99,7 @@
             text-decoration: underline;
         }
 
-        .buttons-container {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .professional-button {
+        .back-button {
             display: inline-block;
             padding: 0.8rem 2rem;
             background: #60a5fa;
@@ -111,11 +107,12 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 5px;
-            margin: 0.5rem;
+            margin-top: 2rem;
             transition: background 0.3s ease;
+            text-align: center;
         }
 
-        .professional-button:hover {
+        .back-button:hover {
             background: #1e3a8a;
         }
 
@@ -124,11 +121,11 @@
                 font-size: 2rem;
             }
 
-            .content-section {
+            .professional-container {
                 padding: 1.5rem;
             }
 
-            h2 {
+            .letter-header {
                 font-size: 1.5rem;
             }
 
@@ -136,7 +133,11 @@
                 font-size: 1.2rem;
             }
 
-            .professional-button {
+            ul li {
+                font-size: 0.9rem;
+            }
+
+            .back-button {
                 padding: 0.7rem 1.5rem;
                 font-size: 0.9rem;
             }
@@ -147,64 +148,23 @@
     <div class="professional-wrapper">
         <header class="header-section">
             <h1>Alex Sola</h1>
-            <p>Desenvolupador Web i Tècnic en Sistemes</p>
+            <p>Dades de Contacte</p>
         </header>
+        <article class="professional-container">
+            <h2 class="letter-header">Contacte</h2>
 
-        <section class="content-section">
-            <h2>Currículum Professional</h2>
-
-            <h3>📍 Contacte</h3>
+            <h3>📍 Dades de Contacte</h3>
             <ul>
                 <li>📧 Correu: <a href="mailto:alexsola80xd@gmail.com">alexsola80xd@gmail.com</a></li>
                 <li>📞 Telèfon: +34 665 81 31 17</li>
                 <li>🏠 Adreça: Carrer Cap de Creus 4, Girona</li>
                 <li>🎂 Data de naixement: 25/09/2005</li>
+                <li>📸 Instagram: <a href="https://www.instagram.com/_aleexsolaa" target="_blank">_aleexsolaa</a></li>
+                <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/alex-sola-713668230" target="_blank">alex-sola-713668230</a></li>
             </ul>
 
-            <h3>🎓 Formació Acadèmica</h3>
-            <ul>
-                <li><strong>Institut Montilivi</strong> – Desenvolupament d’Aplicacions Web (2023-Actualitat)</li>
-                <li><strong>IES Salvador Espriu</strong> – Sistemes Microinformàtics i Xarxes (2021-2023)</li>
-                <li><strong>Fedac Sant Narcís</strong> – ESO (2017-2021)</li>
-            </ul>
-
-            <h3>💼 Experiència Laboral</h3>
-            <ul>
-                <li><strong>Bar del GEiEG (Vinvinxi)</strong> – Ajudant de cambrer (Juny 2024 – Setembre 2024)</li>
-                <li><strong>Factoria 81</strong> – Ajudant de taller (Juny 2022 – Novembre 2022)</li>
-            </ul>
-
-            <h3>🧠 Aptituds i Habilitats</h3>
-            <ul>
-                <li>Ofimàtica (Excel, Word, Access)</li>
-                <li>Programació (C#, HTML, CSS, SQL, Visual Studio)</li>
-                <li>Web: WordPress, disseny web</li>
-                <li>Gestió d’entorns virtualitzats</li>
-                <li>Electrònica, resolució de problemes, flexibilitat</li>
-                <li>Habilitats comunicხ
-
-                <li>Adaptabilitat i comunicació</li>
-            </ul>
-
-            <h3>🗣️ Idiomes</h3>
-            <ul>
-                <li>🇪🇸 Castellà i català: Natiu</li>
-                <li>🇬🇧 Anglès: Nivell Mig-Alt</li>
-            </ul>
-
-            <h3>🎯 Altres Experiències</h3>
-            <ul>
-                <li>Títol Nivell 0 Handbol (Premonitor)</li>
-                <li>2n Entrenador Equip Handbol Benjamí – GEIEG (2021-2022)</li>
-                <li>Extraescolars a Escola Domeny i Bosc de la Pabordia</li>
-                <li>Secció d’aventura i escalada – Lleuresport (2023)</li>
-            </ul>
-        </section>
-
-        <div class="buttons-container">
-            <a href="https://drive.google.com/file/d/1Tr-CM-Ek3GX-ZxV1p-WtzrYviYWQUCL3/view?usp=sharing" target="_blank" class="professional-button">Veure Videocurrículum</a>
-            <a href="index.html" class="professional-button">Tornar a l’Inici</a>
-        </div>
+            <a href="index.html" class="back-button">Tornar a l’Inici</a>
+        </article>
     </div>
 </body>
 </html>
